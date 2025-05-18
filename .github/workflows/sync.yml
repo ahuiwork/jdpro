@@ -22,7 +22,7 @@ jobs:
 
       - name: Add upstream & fetch
         run: |
-          git remote add upstream https://github.com/6dylan6/jdpro
+          git remote add upstream https://github.com/6dylan6/jdpro.git
           git fetch upstream
 
       - name: Rebase onto upstream
