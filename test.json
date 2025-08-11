@@ -1,0 +1,60 @@
+{
+  "name": "每日访问网站",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": [
+          {
+            "hour": 9,
+            "minute": 0
+          }
+        ]
+      },
+      "id": "1",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://example.com",
+        "responseFormat": "string",
+        "options": {
+          "followRedirects": true
+        }
+      },
+      "id": "2",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        500,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  ],
+  "active": false,
+  "settings": {},
+  "id": "0b1e9a85-25f4-4a37-9b4b-d7a88a8c1d3a",
+  "meta": {
+    "instanceId": "f73f6f54-2f6b-4a4b-9b7b-6f1bba2e8e85"
+  },
+  "tags": []
+}
